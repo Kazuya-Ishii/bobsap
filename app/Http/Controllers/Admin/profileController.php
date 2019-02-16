@@ -19,6 +19,13 @@ class profileController extends Controller
       $profile = new Profile;
       $form = $request->all();
 
+      unset($form['_token'] );
+
+      //ここが間違ってる？
+      $news->fill($form);
+      $news->save();
+
+
       return redirect('admin/profile/create');
     }
 
