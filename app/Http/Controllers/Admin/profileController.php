@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\Profile;
 
-class profileController extends Controller
+class ProfileController extends Controller
 {
     //課題４.５
     public function add(){
@@ -22,8 +22,8 @@ class profileController extends Controller
       unset($form['_token'] );
 
       //ここが間違ってる？
-      $news->fill($form);
-      $news->save();
+      $profile->fill($form);
+      $profile->save();
 
 
       return redirect('admin/profile/create');
