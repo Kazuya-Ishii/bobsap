@@ -7,6 +7,11 @@ use App\Http\Controllers\Controller;
 
 use App\News;
 
+//historyの使用許可
+use App\History;
+//じかん
+use Carbon\Carbon;
+
 class NewsController extends Controller
 {
     //以下を追記
@@ -74,6 +79,12 @@ class NewsController extends Controller
       unset($news_form['image']);
       //該当するデータを上書き保存
       $news->fill($news_form)->save();
+
+      //histories関連
+      $history = new History;
+      $history->news_id = $news->id;
+      $history->edited_at = Carbon::now();
+      $history->save();
 
       return redirect('admin/news/');
     }

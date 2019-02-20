@@ -13,4 +13,9 @@ class Profile extends Model
     'hobby' => 'required',
     'introduction' => 'required',
   );
+
+  //課題１８
+  public function bobsapbackgrounds(){
+    return $this->hasMany('App\Bobsapbackground');
+  }
 }
