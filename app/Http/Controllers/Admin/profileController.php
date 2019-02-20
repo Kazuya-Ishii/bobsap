@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Profile;
 
 //課題１８
-use App\History;
+use App\Bobsapbackground;
 use Carbon\Carbon;
 
 class ProfileController extends Controller
